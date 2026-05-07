@@ -3,11 +3,11 @@ import Image from 'next/image';
 interface ProductCardProps {
   title: string;
   description: string;
-  category: string;
+  price: string;
   imageUrl?: string;
 }
 
-export default function ProductCard({ title, description, category, imageUrl }: ProductCardProps) {
+export default function ProductCard({ title, description, price, imageUrl }: ProductCardProps) {
   return (
     <div className="group flex flex-col overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-sm transition-all hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900">
       {/* Image Placeholder */}
@@ -17,6 +17,7 @@ export default function ProductCard({ title, description, category, imageUrl }: 
             src={imageUrl}
             alt={title}
             fill
+            unoptimized={true} // Using unoptimized because we might not know all Godaddy CDN variants and to avoid complex next.config during migration
             className="object-cover transition-transform duration-300 group-hover:scale-105"
           />
         ) : (
@@ -37,9 +38,9 @@ export default function ProductCard({ title, description, category, imageUrl }: 
             </svg>
           </div>
         )}
-        <div className="absolute top-3 left-3">
-          <span className="rounded-full bg-white/90 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-zinc-800 backdrop-blur-sm dark:bg-zinc-900/90 dark:text-zinc-200">
-            {category}
+        <div className="absolute top-3 right-3">
+          <span className="rounded-full bg-black/80 px-3 py-1 text-sm font-bold text-white backdrop-blur-sm dark:bg-white/80 dark:text-black">
+            ${price}
           </span>
         </div>
       </div>
@@ -47,13 +48,13 @@ export default function ProductCard({ title, description, category, imageUrl }: 
       {/* Content */}
       <div className="flex flex-1 flex-col p-5">
         <h3 className="text-lg font-bold text-zinc-900 dark:text-zinc-50">{title}</h3>
-        <p className="mt-2 flex-1 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+        <p className="mt-2 flex-1 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 line-clamp-3">
           {description}
         </p>
 
         <div className="mt-6">
           <a
-            href="https://crowsknot.com"
+            href="https://www.etsy.com/shop/CleverThreadsDesigns"
             target="_blank"
             rel="noopener noreferrer"
             className="flex w-full items-center justify-center rounded-lg bg-black px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-zinc-800 focus:outline-none focus:ring-2 focus:ring-zinc-950 focus:ring-offset-2 dark:bg-white dark:text-black dark:hover:bg-zinc-200"

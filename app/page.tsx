@@ -1,30 +1,10 @@
 import Link from "next/link";
 import ProductCard from "@/components/ProductCard";
-
-const featuredDesigns = [
-  {
-    title: "Lunar Moth",
-    description: "An ethereal moth design surrounded by celestial phases. Perfect for dark-themed creative projects.",
-    category: "Nature",
-  },
-  {
-    title: "Enchanted Forest Mushroom",
-    description: "Detailed botanical illustration featuring a cluster of forest mushrooms and wild ferns.",
-    category: "Nature",
-  },
-  {
-    title: "Bastet Goddess",
-    description: "Regal Ancient Egyptian deity representation with intricate gold and lapis lazuli detailing.",
-    category: "Mythological",
-  },
-  {
-    title: "Seasonal Pentagram",
-    description: "A rhythmic weaving of ivy and oak around a traditional pentagram motif for the changing seasons.",
-    category: "Mythological",
-  }
-];
+import { getInventory } from "@/lib/inventory";
 
 export default function Home() {
+  const inventory = getInventory();
+
   return (
     <div className="flex flex-col min-h-screen bg-white dark:bg-black font-sans">
       {/* Hero Section */}
@@ -71,12 +51,13 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {featuredDesigns.map((design, index) => (
+            {inventory.map((product, index) => (
               <ProductCard
                 key={index}
-                title={design.title}
-                description={design.description}
-                category={design.category}
+                title={product.Title}
+                description={product.Description}
+                price={product.Price}
+                imageUrl={product.ImageURL}
               />
             ))}
           </div>
