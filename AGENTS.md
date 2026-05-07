@@ -1,3 +1,1 @@
-# AGENTS.md
-
-This repository is for Clever Threads LLC, a site designed to showcase digital embroidery files.
+This repository is for Clever Threads LLC, a site designed for all your embroidery needs.
