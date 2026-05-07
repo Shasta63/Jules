@@ -17,7 +17,6 @@ export default function ProductCard({ title, description, price, imageUrl }: Pro
             src={imageUrl}
             alt={title}
             fill
-            unoptimized={true} // Using unoptimized because we might not know all Godaddy CDN variants and to avoid complex next.config during migration
             className="object-cover transition-transform duration-300 group-hover:scale-105"
           />
         ) : (

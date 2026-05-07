@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import ProductCard from "@/components/ProductCard";
 import { getInventory } from "@/lib/inventory";
 
@@ -8,13 +9,25 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-white dark:bg-black font-sans">
       {/* Hero Section */}
-      <section className="relative flex flex-col items-center justify-center py-24 px-6 text-center lg:py-32 bg-radial-[at_50%_50%] from-zinc-100 to-white dark:from-zinc-900 dark:to-black">
-        <div className="max-w-4xl mx-auto space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-1000">
-          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-black dark:text-white leading-[1.1]">
-            Premium Digital <span className="text-zinc-500">Embroidery</span> Designs
+      <section className="relative flex flex-col items-center justify-center min-h-[70vh] py-24 px-6 text-center">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/banner.jpg"
+            alt="Clever Threads Banner"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-black/50" />
+        </div>
+
+        <div className="relative z-10 max-w-4xl mx-auto space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-1000">
+          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-white leading-[1.1]">
+            Premium Digital <span className="text-zinc-300">Embroidery</span> Designs
           </h1>
 
-          <p className="text-xl md:text-2xl text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-zinc-200 max-w-2xl mx-auto leading-relaxed">
             High-quality, instantly downloadable files to elevate your creative projects.
             Beautiful designs for every style, ready for your next masterpiece.
           </p>
@@ -22,7 +35,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
             <Link
               href="#collection"
-              className="w-full sm:w-auto px-8 py-4 bg-black text-white dark:bg-white dark:text-black rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-lg"
+              className="w-full sm:w-auto px-8 py-4 bg-white text-black rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-lg"
             >
               Explore the Collection
             </Link>
@@ -30,7 +43,7 @@ export default function Home() {
               href="https://www.etsy.com/shop/CleverThreadsDesigns"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto px-8 py-4 bg-white text-black border-2 border-black dark:bg-black dark:text-white dark:border-white rounded-full font-bold text-lg hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors"
+              className="w-full sm:w-auto px-8 py-4 bg-transparent text-white border-2 border-white rounded-full font-bold text-lg hover:bg-white/10 transition-colors"
             >
               Shop Clever Threads
             </a>
@@ -51,9 +64,9 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {inventory.map((product, index) => (
+            {inventory.map((product) => (
               <ProductCard
-                key={index}
+                key={product.Title}
                 title={product.Title}
                 description={product.Description}
                 price={product.Price}
