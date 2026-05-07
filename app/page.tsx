@@ -47,12 +47,12 @@ export default function Home() {
               Explore the Collection
             </Link>
             <a
-              href="https://crowsknot.com"
+              href="https://www.etsy.com/shop/CleverThreadsDesigns"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto px-8 py-4 bg-white text-black border-2 border-black dark:bg-black dark:text-white dark:border-white rounded-full font-bold text-lg hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors"
             >
-              Shop on Etsy
+              Shop Clever Threads
             </a>
           </div>
         </div>
@@ -83,7 +83,7 @@ export default function Home() {
 
           <div className="mt-16 text-center">
             <a
-              href="https://crowsknot.com"
+              href="https://www.etsy.com/shop/CleverThreadsDesigns"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-lg font-semibold text-black hover:underline dark:text-white"

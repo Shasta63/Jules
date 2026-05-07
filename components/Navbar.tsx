@@ -28,7 +28,7 @@ export default function Navbar() {
               Contact
             </Link>
             <a
-              href="https://crowsknot.com"
+              href="https://www.etsy.com/shop/CleverThreadsDesigns"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-black text-white px-4 py-2 rounded-md font-medium hover:bg-gray-800 transition-colors dark:bg-white dark:text-black dark:hover:bg-gray-200"
@@ -84,7 +84,7 @@ export default function Navbar() {
               Contact
             </Link>
             <a
-              href="https://crowsknot.com"
+              href="https://www.etsy.com/shop/CleverThreadsDesigns"
               target="_blank"
               rel="noopener noreferrer"
               className="block w-full text-center bg-black text-white px-4 py-2 rounded-md font-medium hover:bg-gray-800 transition-colors mt-4 dark:bg-white dark:text-black dark:hover:bg-gray-200"
