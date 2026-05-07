@@ -10,7 +10,7 @@ interface ProductCardProps {
 export default function ProductCard({ title, description, price, imageUrl }: ProductCardProps) {
   return (
     <div className="group flex flex-col overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-sm transition-all hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900">
-      {/* Image Placeholder */}
+      {/* Product Image */}
       <div className="aspect-square relative w-full overflow-hidden bg-zinc-100 dark:bg-zinc-800">
         {imageUrl ? (
           <Image

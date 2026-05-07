@@ -6,14 +6,14 @@ export interface Product {
   Title: string;
   Description: string;
   Price: string;
-  ImageURL: string;
+  'IMAGE URL': string;
 }
 
 /**
  * Reads and parses the GoDaddy inventory from data/inventory.csv.
  * Returns an array of objects containing Title, Description, Price, and Image URL.
  */
-export function getInventory(): Product[] {
+export function getInventory() {
   const csvFilePath = path.join(process.cwd(), 'data', 'inventory.csv');
   const csvFile = fs.readFileSync(csvFilePath, 'utf8');
 
@@ -26,6 +26,6 @@ export function getInventory(): Product[] {
     Title: item.Title,
     Description: item.Description,
     Price: item.Price,
-    ImageURL: item.ImageURL
+    ImageURL: item['IMAGE URL']
   }));
 }
