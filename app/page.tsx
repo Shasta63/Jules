@@ -1,23 +1,13 @@
 import Link from "next/link";
-import Image from "next/image";
 import FeaturedDesigns from "@/components/FeaturedDesigns";
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-white dark:bg-black font-sans">
       {/* Hero Section */}
-      <section className="relative flex flex-col items-center justify-center min-h-[70vh] py-24 px-6 text-center">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/banner.jpg"
-            alt="Clever Threads Banner"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-black/50" />
-        </div>
+      <section className="relative flex flex-col items-center justify-center min-h-[70vh] py-24 px-6 text-center bg-[url('/banner.jpg')] bg-cover bg-center">
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/50 z-0" />
 
         <div className="relative z-10 max-w-4xl mx-auto space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-1000">
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-white leading-[1.1]">
