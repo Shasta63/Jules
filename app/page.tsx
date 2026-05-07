@@ -1,4 +1,28 @@
 import Link from "next/link";
+import ProductCard from "@/components/ProductCard";
+
+const featuredDesigns = [
+  {
+    title: "Lunar Moth",
+    description: "An ethereal moth design surrounded by celestial phases. Perfect for dark-themed creative projects.",
+    category: "Nature",
+  },
+  {
+    title: "Enchanted Forest Mushroom",
+    description: "Detailed botanical illustration featuring a cluster of forest mushrooms and wild ferns.",
+    category: "Nature",
+  },
+  {
+    title: "Bastet Goddess",
+    description: "Regal Ancient Egyptian deity representation with intricate gold and lapis lazuli detailing.",
+    category: "Mythological",
+  },
+  {
+    title: "Seasonal Pentagram",
+    description: "A rhythmic weaving of ivy and oak around a traditional pentagram motif for the changing seasons.",
+    category: "Mythological",
+  }
+];
 
 export default function Home() {
   return (
@@ -34,16 +58,41 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Collection Section Placeholder */}
-      <section id="collection" className="py-24 px-6 bg-zinc-50 dark:bg-zinc-950 min-h-[50vh]">
-        <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12">Our Collection</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="aspect-square bg-zinc-200 dark:bg-zinc-800 rounded-2xl flex items-center justify-center animate-pulse">
-                <span className="text-zinc-400">Embroidery Preview {i}</span>
-              </div>
+      {/* Featured Designs Section */}
+      <section id="collection" className="py-24 px-6 bg-zinc-50 dark:bg-zinc-950">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
+              Featured Designs
+            </h2>
+            <p className="mt-4 text-lg text-zinc-600 dark:text-zinc-400">
+              Discover our most popular embroidery motifs, ready for instant download.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {featuredDesigns.map((design, index) => (
+              <ProductCard
+                key={index}
+                title={design.title}
+                description={design.description}
+                category={design.category}
+              />
             ))}
+          </div>
+
+          <div className="mt-16 text-center">
+            <a
+              href="https://crowsknot.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-lg font-semibold text-black hover:underline dark:text-white"
+            >
+              View entire collection on Etsy
+              <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
           </div>
         </div>
       </section>
