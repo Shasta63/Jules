@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import ProductCard from "@/components/ProductCard";
-import { getInventory } from "@/lib/inventory";
+import { getInventory } from "@/lib/getInventory";
 
 export default function Home() {
   const inventory = getInventory();
